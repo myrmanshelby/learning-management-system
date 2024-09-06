@@ -1,0 +1,66 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "book-processor"
+dynamic = ["version"]
+description = 'Extracts the learning objectives from a book.'
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+keywords = []
+authors = []
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+
+dependencies = [
+  "google-generativeai",
+  "PyPDF2",
+  "pydantic",
+  "Flask",
+  "flask_cors",
+]
+
+[project.urls]
+Documentation = "?"
+Issues = "?"
+Source = "?"
+
+[tool.hatch.version]
+path = "src/book_processor/__about__.py"
+
+[tool.hatch.envs.types]
+extra-dependencies = [
+  "mypy>=1.0.0",
+]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/book_processor tests}"
+
+[tool.coverage.run]
+source_pkgs = ["book_processor", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/book_processor/__about__.py",
+]
+
+[tool.coverage.paths]
+book_processor = ["src/book_processor", "*/book-processor/src/book_processor"]
+tests = ["tests", "*/book-processor/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]

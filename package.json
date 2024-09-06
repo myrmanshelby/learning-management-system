@@ -1,0 +1,67 @@
+{
+  "name": "expressjs-react-template",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "A template for serving React Websites from ExpressJS",
+  "main": "src/app.js",
+  "scripts": {
+    "server": "node --experimental-specifier-resolution=node dist/backend/server.js",
+    "build": "tsc --build && webpack && cp src/frontend/*.html dist/frontend",
+    "env": "source .env",
+    "clean": "rm -rf dist/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jakesutt/ExpressJS-React-Template.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jakesutt/ExpressJS-React-Template/issues"
+  },
+  "homepage": "https://github.com/jakesutt/ExpressJS-React-Template#readme",
+  "dependencies": {
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
+    "@google/generative-ai": "^0.12.0",
+    "@mui/icons-material": "^5.16.6",
+    "@mui/material": "^5.16.6",
+    "@types/body-parser": "^1.19.5",
+    "@types/multer": "^1.4.11",
+    "axios": "^1.7.3",
+    "body-parser": "^1.20.2",
+    "chart.js": "^4.4.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "firebase": "^10.12.2",
+    "firebase-admin": "^12.2.0",
+    "lodash": "^4.17.21",
+    "multer": "^1.4.5-lts.1",
+    "react": "^18.3.1",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "^18.3.1",
+    "react-markdown": "^9.0.1",
+    "react-router-dom": "^6.23.1",
+    "uuid": "^10.0.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.14.2",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "css-loader": "^7.1.2",
+    "firebase-functions-test": "^3.3.0",
+    "firebase-tools": "^13.14.0",
+    "jest": "^29.7.0",
+    "style-loader": "^4.0.0",
+    "ts-jest": "^29.2.3",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.5",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
